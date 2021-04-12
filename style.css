@@ -24,6 +24,20 @@
             font-family: 'Merriweather', serif;
             font-weight: 300;
           }
+          .main {
+            margin-left:0 auto;
+            margin-right: 0 auto;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top:2% ;
+            padding-bottom:3% ;
+            margin-top: 50px;
+            margin-bottom:0px;
+            background-color: rgba(235, 235, 235, 0.95);
+            transform: translate(16%, 0);
+            width: 55%;
+            color:rgb(66, 66, 66);
+          }
           .main-page{
             text-align: center;
           }
@@ -64,31 +78,18 @@
         .topnav ul li a.active {
           background-color: #adc1db;
         }
-        .main {
-            margin-left:0 auto;
-            margin-right: 0 auto;
-            padding-left: 10%;
-            padding-right: 10%;
-            padding-top:2% ;
-            padding-bottom:3% ;
-            margin-top: 50px;
-            margin-bottom:0px;
-            background-color: rgba(235, 235, 235, 0.95);
-            transform: translate(16%, 0);
-            width: 55%;
-            color:rgb(66, 66, 66);
-          }
+        
           table {
             color: #10598a;
             margin-left: auto;
             margin-right: auto;
-            padding: 5px;
+            padding: 10px;
             border: 3px solid #10598a;
             width: 80%;
           }
           
           tr {
-            text-align: left;
+            text-align: justify;
             padding: 8px;
           }
           button {
