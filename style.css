@@ -3,6 +3,8 @@
       body {
           margin: 0;
           font-family: 'Open Sans', sans-serif;
+          text-align: justify;
+          font-size: 20px;
           background-image: url("background.jpg");
           background-color: #dbdbdb; 
           background-position: center; /* Center the image */
@@ -21,6 +23,12 @@
           h3 {
             font-family: 'Merriweather', serif;
             font-weight: 300;
+          }
+          .main-page{
+            text-align: center;
+          }
+          .highlighted{
+              color:#10598a;
           }
         .topnav {
           overflow: hidden;
@@ -61,11 +69,60 @@
             padding-right: 10%;
             padding-top:2% ;
             padding-bottom:3% ;
-            margin-top: 55px;
+            margin-top: 50px;
             margin-bottom:0px;
             background-color: rgba(235, 235, 235, 0.95);
-            transform: translate(9%, 0);
-            width: 65%;
-            color:rgb(88, 88, 88);
+            transform: translate(16%, 0);
+            width: 55%;
+            color:rgb(66, 66, 66);
           }
-
+          table {
+            color: #10598a;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px;
+            border: 3px solid #10598a;
+            width: 80%;
+          }
+          
+          tr {
+            text-align: left;
+            padding: 8px;
+          }
+          button {
+            background-color: #ffffff00;
+            border: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        .container{
+         position: relative;
+        display: inline-block;
+        }
+               .container .overlay {
+                margin-left: auto;
+                margin-right: auto;
+                position:absolute;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                height: 300px;
+                width: 300px;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: #10598ac2
+              }
+              .text{
+                color: rgba(235, 235, 235);
+                font-size: 25px;
+                
+                padding-top: 140px;
+                text-align: center;
+              }
+              .container:hover .overlay {
+                opacity: 1;
+              }
+              .container a:visited {
+                color: rgba(235, 235, 235);
+              }
