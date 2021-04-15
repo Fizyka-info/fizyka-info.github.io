@@ -6,23 +6,27 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topbar-style.css">
     
 </head>   
 <body>
-    <div class="topnav">
-        <ul>
-            <li><a href="index.html">Strona Główna</a>
-            </li>
-            <li><a class="active" a href="atomowa.html">Fizyka Atomowa</a>
-            </li>
-          </ul>
-    </div>
+    <div class="navbar">
+        <a href="index.html">Strona Główna</a>
+        <div class="dropdown">
+          <button class="dropbtn">Fizyka Atomowa 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="atomowa1.html">Temat 1</a>
+            <a href="atomowa2.html">Temat 2</a>
+            <a href="atomowa3.html">Temat 3</a>
+            <a href="atomowa4.html">Temat 4</a>
+          </div>
+        </div> 
+      </div>
       
       <div class="main">
         <h1>Fizyka Atomowa</h1>
-        <h2>Podwójna natura światła</h2>
-        <p>Zjawisko fotoelektryczne zewnętrzne</p> 
-        <p>Zjawisko fotochemiczne</p>
         <h2>Promieniowanie termiczne</h2>
       
         <p>Każde ciało powyżej zera bezwzględnego jest źródłem promieniowania elektromagnetycznego. W niższych temperaturach jest to podczerwień a ciała rozgrzewane do bardzo wysokich temperatur świecą – im wyższa temperatura, tym jaśniej świeci ciało, a zatem wysyła więcej energii. Zmienia się również barwa światła: w temperaturze ok. 500°C światło wysyłane przez rozgrzane ciało ma barwę ciemnoczerwoną, wraz ze wzrostem temperatury barwa ciała staje się najpierw pomarańczowa, potem jasnożółta, białożółta, a na końcu biała. Za emisję promieniowania cieplnego odpowiedzialna jest energia ruchu cieplnego atomów i cząsteczek w obserwowanym ciele.
@@ -75,7 +79,9 @@
             <tr><th style="text-align: center;"><p>λmax=a/T</p></th></tr>
             <tr><th style="text-align: center;">gdzie a jest pewną stałą, a= 2,898*10-3mK</th></tr>
       </table><br>
-      <h2>Zadania</h2><br>
+      <ul class="nopadding">
+        <li class=left-topic><a class= "pagelink" href="atomowa1.html">&lt;&lt;Poprzedni temat</a></li><li class= "right-topic"><a class= "pagelink" href="atomowa3.html">Następny temat&gt;&gt;</a></li>
+    </ul><br><br>
     <h3>Bibliografia</h3>
     <a href="https://epodreczniki.pl/a/promieniowanie-termiczne-cial-stalych/D1BZobvVo">https://epodreczniki.pl/a/promieniowanie-termiczne-cial-stalych/D1BZobvVo</a>
     <a href="http://ilf.fizyka.pw.edu.pl/podrecznik/1/2/1/#topic_1_h2.1">http://ilf.fizyka.pw.edu.pl/podrecznik/1/2/1/#topic_1_h2.1</a>

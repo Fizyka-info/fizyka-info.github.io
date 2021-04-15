@@ -4,35 +4,66 @@
     <title>Fizyka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topbar-style.css">
+    <link rel="stylesheet" href="dropdown-style.css">
     
 </head>   
 <body>
-    <div class="topnav">
-        <ul>
-            <li><a class="active" a href="index.html">Strona Główna</a>
-            </li>
-            <li><a href="atomowa.html">Fizyka Atomowa</a>
-            </li>
-          </ul>
-    </div>
+    <div class="navbar">
+        <a href="index.html">Strona Główna</a>
+        <div class="dropdown">
+          <button class="dropbtn">Fizyka Atomowa 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="atomowa1.html">Temat 1: Podwójna natura światła</a>
+            <a href="atomowa2.html">Temat 2: Promieniowanie termiczne</a>
+            <a href="atomowa3.html">Temat 3: Widmo liniowe emisyjne i absorpcyjne</a>
+            <a href="atomowa4.html">Temat 4: Budowa atomu</a>
+          </div>
+        </div> 
+      </div>
       
     <div class="main">
         <h1 class="main-page">Fizyka</h1>
         <table style="border: none; width: 250px;">
             <tr><th>
-        <button type = "button" value = "myimage">  
-            <div class="container">
-        <a href="atomowa.html"><img src="atom.svg " width="250px" height="250px"/>
-            <div class="overlay">
-            <div class="text">Fizyka Atomowa</div>
-            </div>
-        </div>
-        </a>
-         </button>
+                <div class="dropdown2">
+                    <button onclick="myFunction()" class="dropbtn2">Fizyka Atomowa</button>
+                    <div id="myDropdown2" class="dropdown-content2">
+                      <a href="atomowa1.html">Temat 1: Podwójna natura światła</a>
+                      <a href="atomowa2.html">Temat 2: Promieniowanie termiczne</a>
+                      <a href="atomowa3.html">Temat 3: Widmo liniowe emisyjne i absorpcyjne</a>
+                      <a href="atomowa4.html">Temat 4: Budowa atomu</a>
+                    </div>
+                  </div>
          </th>
          </tr>
     </table>
+    
     <p style= "padding-bottom: 100px;"> </p>
+ 
 </div>
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown2").classList.toggle("show2");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn2')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content2");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show2')) {
+            openDropdown.classList.remove('show2');
+          }
+        }
+      }
+    }
+    </script>
 </body>
 </html>
