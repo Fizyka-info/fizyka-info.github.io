@@ -1,32 +1,32 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect("mongodb+srv://Katarzyna-admin:SamplePsw@cluster0.dilop.mongodb.net/test-responses", { useNewUrlParser: true }, { useUnifiedTopology: true })
 
-//create data scheme
-const testScheme = {
+const notesSchema = {
     title: String,
     content: String
 }
-const Test = mongoose.model('Test', testScheme);
 
-app.get("/", function(req,res){
-    res.sendFile(__dirname + "/index.html");
+const Note = mongoose.model('Note', notesSchema);
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html')
 })
 
-app.post("/",function(req,res){
-    let newTest = new Test({
+app.post('/', function(req, res) {
+    let newNote = new Note({
         title: req.body.title,
         content: req.body.content
     });
-    newTest.save();
-    res.redirect('/');
+
+    newNote.save();
 })
 
-app.listen(3000, function(){
-    console.log("server is running on 3000");
+app.listen(3000, function() {
+    console.log("server running");
 })
