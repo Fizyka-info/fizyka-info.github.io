@@ -26,7 +26,7 @@
         comm=localStorage.getItem('activeComm');
         $("#panel").slideDown("slow");
     }
-    $( "#target" ).click(function( event ) {
+    $( "#target" ).submit(function( event ) {
       $comm=$(this).next("#panel");
        $comm.slideDown("slow");
        localStorage.setItem('activeComm',$comm.attr('id'));
