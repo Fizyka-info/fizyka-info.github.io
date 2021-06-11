@@ -21,6 +21,10 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+    $( "#target" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
     $(document).ready(function(){
   $("#submit").click(function(){
     $("#panel").slideDown("slow");
@@ -124,7 +128,7 @@
       <iframe class="center" width="80%" height="480px" src="https://www.youtube.com/embed/kqngclvyePc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </iframe>
       <div>
-        <form action="/user" method="POST">
+        <form id= "target" action="/user" method="POST">
         <h2>Zadanie</h2>
         <div class="input-group">
             <label class="question">W temperaturze pokojowej kawałek metalu ...1... promieniowanie.

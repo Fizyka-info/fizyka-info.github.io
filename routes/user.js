@@ -50,7 +50,7 @@ router.post('/user', (req, res) => {
         res.sendStatus(500)
         return
       }
-      res.redirect("/atomowa2.html");
+      //res.redirect("/atomowa2.html");
       console.log("Inserted a new user with id: ", results.insertId);
       res.end()
     })
