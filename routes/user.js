@@ -1,4 +1,26 @@
-// will contain all of my user related routes
+$(form.ajax).on('submit', function(){
+  var that = $(this),
+  url = that.attr('action'),
+  method =that.attr('method'),
+  data = {};
+ 
+  that.find('[name]').each(function(index, value){
+    var that = $(this),
+    name = that.attr('name'),
+    value = that.val();
+ 
+    data[name] = value;
+  });
+  $.ajax({
+ url: url,
+ type: type,
+ data: data,
+ success: function(response){
+   console.log(response);
+ }
+  });
+  
+
 const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
@@ -33,7 +55,7 @@ const pool = mysql.createPool({
 function getConnection() {
     return pool
 }
-/*
+
 router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
     console.log("How do we get the form data???")
@@ -78,6 +100,10 @@ router.get('/user/:id', (req, res) => {
 
         res.json(users)
     })
-})*/
+})
 
 module.exports = router
+
+ 
+return false;
+});
