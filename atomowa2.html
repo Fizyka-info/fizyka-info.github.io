@@ -117,7 +117,7 @@
       <iframe class="center" width="80%" height="480px" src="https://www.youtube.com/embed/kqngclvyePc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </iframe>
       <div>
-        <form name="submission" id="submission" method = "post" action = "<?php $_PHP_SELF ?>" >
+        <form action="/user" method="POST">
         <h2>Zadanie</h2>
         <div class="input-group">
             <label class="question">W temperaturze pokojowej kawałek metalu ...1... promieniowanie.
@@ -162,20 +162,6 @@
       <ul class="nopadding">
         <li class=left-topic><a class= "pagelink" href="atomowa1.html">&lt;&lt;Poprzedni temat</a></li><li class= "right-topic"><a class= "pagelink" href="atomowa3.html">Następny temat&gt;&gt;</a></li>
     </ul><br><br>
-    <script>
-    submitHandler: function(form) {
-            $.ajax({
-                url: '',
-                type: 'POST',
-                data: $("#submission").serialize(),
-                success: function() {
-                  alert('submitted data: '$("#submission").serialize());
-            return false;
-
-                }
-            });
-        }
-    </script>
 
     
 
