@@ -33,7 +33,7 @@ function getConnection() {
     return pool
 }
 
-router.post('/user', (req, res) => {
+router.post('/', (req, res) => {
     console.log("Trying to create a new user...")
  
     const firstQuestion = req.body.Q1
