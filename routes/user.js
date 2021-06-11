@@ -27,7 +27,7 @@ const pool = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'be392d3481f8c6',
     password: '37efc915',
-    database: 'heroku_576e0dbd383ebc6'
+    database: 'heroku_576e0dbd383ebc6.users'
 })
 
 function getConnection() {
