@@ -21,18 +21,15 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function(){
-    if(localStorage && localStorage.getItem('activeComm')){
-        comm=localStorage.getItem('activeComm');
-        $("#panel").slideDown("slow");
-    }
-    $( "#target" ).click(function( event ) {
-      $comm=$(this).next("#panel");
-       $comm.slideDown("slow");
-       localStorage.setItem('activeComm',$comm.attr('id'));
-       return false;
-      });
+   [].forEach.call(document.querySelector('#target').elements, function(el) {
+  localStorage.setItem(el.name, el.value);
 });
+
+// then refresh the page and run this to restore your form values:
+[].forEach.call(document.querySelector('#target').elements, function(el) {
+  el.value = localStorage.getItem(el.name);
+});
+
     </script>
 <script scr ="user.js"></script>
     
