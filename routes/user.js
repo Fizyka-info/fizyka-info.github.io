@@ -33,7 +33,7 @@ function getConnection() {
     return pool
 }
 
-/*router.post('/user', (req, res) => {
+router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
  
     const firstQuestion = req.body.Q1
@@ -54,7 +54,7 @@ function getConnection() {
       console.log("Inserted a new user with id: ", results.insertId);
       res.end()
     })
-  })*/
+  })
   
 router.get('/user/:id', (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
