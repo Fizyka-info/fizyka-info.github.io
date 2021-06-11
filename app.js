@@ -16,8 +16,10 @@ app.use(express.static('./'))
 app.use(morgan('short'))
 
 const router = require('./routes/user.js')
+const router2 = require('./routes/user2.js')
 
 app.use(router)
+app.use(router2)
 
 app.get("/", (req, res) => {
   console.log("Responding to root route")
