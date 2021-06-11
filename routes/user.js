@@ -35,13 +35,16 @@ function getConnection() {
 
 router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
-    console.log("How do we get the form data???")
  
     const firstQuestion = req.body.Q1
     const secondQuestion = req.body.Q2
+    const thirdQuestion = req.body.Q3
+    const fourthQuestion = req.body.Q4
+    const fifthQuestion = req.body.Q5
+
   
-    const queryString = "INSERT INTO users (first_question, second_question) VALUES (?, ?)"
-    getConnection().query(queryString, [firstQuestion, secondQuestion], (err, results, fields) => {
+    const queryString = "INSERT INTO users (first_question, second_question, third_question, fourth_question, fifth_question) VALUES (?, ?)"
+    getConnection().query(queryString, [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion], (err, results, fields) => {
       if (err) {
         console.log("Failed to insert new user: " + err)
         res.sendStatus(500)
@@ -71,7 +74,7 @@ router.get('/user/:id', (req, res) => {
         console.log("I think we fetched users successfully")
 
         const users = rows.map((row) => {
-        return {firstName: row.first_question, lastName: row.second_question}
+        return {firstQuestion: row.first_question, secondQuestion: row.second_question, thirdtQuestion: row.third_question, fourthQuestion: row.fourth_question, foifthQuestion: row.fifth_question}
         })
 
         res.json(users)
