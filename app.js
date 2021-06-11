@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("Hello from ROOOOOT")
 })
 
-const PORT = process.env.PORT || '5000'
+const PORT = process.env.PORT || 5000
 app.set("port",PORT);
 // localhost:PORT
 app.listen(PORT, () => {
