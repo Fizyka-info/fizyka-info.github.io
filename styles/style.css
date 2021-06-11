@@ -84,6 +84,10 @@
             display: inline-block;
             font-size: 16px;
           }
+          .button.submit:hover {
+            background-color: #093450; 
+            color: white;
+          }
               ul.nopadding
               {
               list-style-type: none;
