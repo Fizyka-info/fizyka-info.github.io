@@ -43,7 +43,7 @@ router.post('/user', (req, res) => {
     const fifthQuestion = req.body.Q5
 
   
-    const queryString = "INSERT INTO users (first_question, second_question, third_question, fourth_question, fifth_question) VALUES (?, ?)"
+    const queryString = "INSERT INTO users (first_question, second_question, third_question, fourth_question, fifth_question) VALUES (?, ?, ?, ?, ?)"
     getConnection().query(queryString, [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion], (err, results, fields) => {
       if (err) {
         console.log("Failed to insert new user: " + err)
@@ -74,7 +74,7 @@ router.get('/user/:id', (req, res) => {
         console.log("I think we fetched users successfully")
 
         const users = rows.map((row) => {
-        return {firstQuestion: row.first_question, secondQuestion: row.second_question, thirdtQuestion: row.third_question, fourthQuestion: row.fourth_question, foifthQuestion: row.fifth_question}
+        return {firstQuestion: row.first_question, secondQuestion: row.second_question, thirdQuestion: row.third_question, fourthQuestion: row.fourth_question, fifthQuestion: row.fifth_question}
         })
 
         res.json(users)
