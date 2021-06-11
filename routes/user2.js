@@ -39,7 +39,7 @@ router.post('/user2', (req, res) => {
     const thirdQuestion = req.body.Q33
 
   
-    const queryString = "INSERT INTO users2 (first_question, second_question, third_question, fourth_question, fifth_question) VALUES (?, ?, ?)"
+    const queryString = "INSERT INTO users2 (first_question, second_question, third_question) VALUES (?, ?, ?)"
     getConnection().query(queryString, [firstQuestion, secondQuestion, thirdQuestion], (err, results, fields) => {
       if (err) {
         res.sendStatus(500)
