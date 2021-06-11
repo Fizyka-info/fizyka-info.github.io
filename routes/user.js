@@ -1,4 +1,27 @@
-// will contain all of my user related routes
+<script src="/js/jquery.min.js"></script>
+$(form.ajax).on('submit', function(){
+  var that = $(this),
+  url = that.attr('action'),
+  method =that.attr('method'),
+  data = {};
+ 
+  that.find('[name]').each(function(index, value){
+    var that = $(this),
+    name = that.attr('name'),
+    value = that.val();
+ 
+    data[name] = value;
+  });
+  $.ajax({
+ url: url,
+ type: type,
+ data: data,
+ success: function(response){
+   console.log(response);
+ }
+  });
+  
+
 const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
@@ -62,7 +85,7 @@ router.get('/user/:id', (req, res) => {
 
     const userId = req.params.id
     const queryString = "SELECT * FROM users WHERE id = ?"
-    connection.query(queryString, [userId], (err, rows, fields) => {
+   connection.query(queryString, [userId], (err, rows, fields) => {
         if (err) {
         console.log("Failed to query for users: " + err)
         res.sendStatus(500)
@@ -73,7 +96,7 @@ router.get('/user/:id', (req, res) => {
         console.log("I think we fetched users successfully")
 
         const users = rows.map((row) => {
-        return {firstName: row.first_name, lastName: row.last_name}
+        //return {firstName: row.first_name, lastName: row.last_name}
         })
 
         res.json(users)
@@ -81,3 +104,7 @@ router.get('/user/:id', (req, res) => {
 })
 
 module.exports = router
+
+ 
+return false;
+});
