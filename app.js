@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Hello from ROOOOOT")
 })
 
-const PORT = process.env.PORT || 21860
+const PORT = process.env.PORT || 5000
 // localhost:PORT
 app.listen(PORT, () => {
   console.log("Server is up and listening on: " + PORT)
