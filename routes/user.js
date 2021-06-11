@@ -9,7 +9,7 @@ router.get('/messages', (req, res) => {
   res.end()
 })
 
-router.get("/users", (req, res) => {
+router.get("/user", (req, res) => {
     const connection = getConnection()
     const queryString = "SELECT * FROM users"
     connection.query(queryString, (err, rows, fields) => {
