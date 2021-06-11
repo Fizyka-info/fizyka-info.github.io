@@ -1,13 +1,13 @@
 const express = require('express')
 const mysql = require('mysql')
-const router = express.Router()
+const router2 = express.Router()
 
 
-router.get('/messages', (req, res) => {
+router2.get('/messages', (req, res) => {
   res.end()
 })
 
-router.get("/user2", (req, res) => {
+router2.get("/user2", (req, res) => {
     const connection = getConnection()
     const queryString = "SELECT * FROM users2"
     connection.query(queryString, (err, rows, fields) => {
@@ -31,7 +31,7 @@ function getConnection() {
     return pool
 }
 
-router.post('/user2', (req, res) => {
+router2.post('/user2', (req, res) => {
 
  
     const firstQuestion = req.body.Q11
@@ -50,13 +50,13 @@ router.post('/user2', (req, res) => {
     })
   })
   
-router.get('/user2/:id', (req, res) => {
+router2.get('/user2/:id', (req, res) => {
 
     const connection = getConnection()
 
-    const userId = req.params.id
+    const user2Id = req.params.id
     const queryString = "SELECT * FROM users2 WHERE id = ?"
-   connection.query(queryString, [userId], (err, rows, fields) => {
+   connection.query(queryString, [user2Id], (err, rows, fields) => {
         if (err) {
         res.sendStatus(500)
         return
@@ -70,4 +70,4 @@ router.get('/user2/:id', (req, res) => {
     })
 })
 
-module.exports = router
+module.exports = router2
