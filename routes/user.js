@@ -34,7 +34,7 @@ function getConnection() {
     return pool
 }
 
-router.post('/user_create', (req, res) => {
+router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
     console.log("How do we get the form data???")
   
