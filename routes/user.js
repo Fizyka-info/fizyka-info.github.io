@@ -1,4 +1,3 @@
-<script src="/js/jquery.min.js"></script>
 $(form.ajax).on('submit', function(){
   var that = $(this),
   url = that.attr('action'),
