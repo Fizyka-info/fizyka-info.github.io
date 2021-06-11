@@ -36,13 +36,12 @@ function getConnection() {
 router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
     console.log("How do we get the form data???")
-  
-    console.log("First name: " + req.body.create_first_name)
-    const firstName = req.body.create_first_name
-    const lastName = req.body.create_last_name
+ 
+    const firstQuestion = req.body.Q1
+    const secondQuestion = req.body.Q2
   
     const queryString = "INSERT INTO users (first_name, last_name) VALUES (?, ?)"
-    getConnection().query(queryString, [firstName, lastName], (err, results, fields) => {
+    getConnection().query(queryString, [firstQuestion, secondQuestion], (err, results, fields) => {
       if (err) {
         console.log("Failed to insert new user: " + err)
         res.sendStatus(500)
@@ -72,7 +71,7 @@ router.get('/user/:id', (req, res) => {
         console.log("I think we fetched users successfully")
 
         const users = rows.map((row) => {
-        //return {firstName: row.first_name, lastName: row.last_name}
+        return {firstName: row.first_question, lastName: row.second_question}
         })
 
         res.json(users)
