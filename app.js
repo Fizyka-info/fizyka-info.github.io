@@ -11,7 +11,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 
 
-app.use(express.static('/'))
+app.use(express.static('./index.html'))
 
 app.use(morgan('short'))
 
