@@ -55,14 +55,14 @@ router.post('/user', (req, res) => {
     })
   })
   
-router.get('/user/:id', (req, res) => {
+/*router.get('/user/:id', (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
 
     const connection = getConnection()
 
     const userId = req.params.id
     const queryString = "SELECT * FROM users WHERE id = ?"
- /*   connection.query(queryString, [userId], (err, rows, fields) => {
+   connection.query(queryString, [userId], (err, rows, fields) => {
         if (err) {
         console.log("Failed to query for users: " + err)
         res.sendStatus(500)
@@ -77,7 +77,7 @@ router.get('/user/:id', (req, res) => {
         })
 
         res.json(users)
-    })*/
-})
+    })
+})*/
 
 module.exports = router
