@@ -1,8 +1,11 @@
 // load our app server using express somehow....
+const cool = require('cool-ascii-faces');
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const mysql = require('mysql')
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 const bodyParser = require('body-parser')
 
@@ -22,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Hello from ROOOOOT")
 })
 
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT || 21860
 // localhost:PORT
 app.listen(PORT, () => {
   console.log("Server is up and listening on: " + PORT)
