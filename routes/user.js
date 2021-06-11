@@ -33,7 +33,7 @@ function getConnection() {
     return pool
 }
 
-router.post('/user', (req, res) => {
+/*router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
  
     const firstQuestion = req.body.Q1
@@ -49,12 +49,35 @@ router.post('/user', (req, res) => {
         console.log("Failed to insert new user: " + err)
         res.sendStatus(500)
         return
+      }*/
+      $(function() {
+        $('#newEntryForm').submit(function(event) {
+            event.preventDefault(); // Stops browser from navigating away from page
+            var data;
+            // build a json object or do something with the form, store in data
+            $.post('/user', data, function(resp) {
+                alert(resp);
+                const firstQuestion = req.body.Q1
+    const secondQuestion = req.body.Q2
+    const thirdQuestion = req.body.Q3
+    const fourthQuestion = req.body.Q4
+    const fifthQuestion = req.body.Q5
+
+    const queryString = "INSERT INTO users (first_question, second_question, third_question, fourth_question, fifth_question) VALUES (?, ?, ?, ?, ?)"
+    getConnection().query(queryString, [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion], (err, results, fields) => {
+      if (err) {
+        console.log("Failed to insert new user: " + err)
+        res.sendStatus(500)
+        return
       }
-      res.redirect("/atomowa2.html");
       console.log("Inserted a new user with id: ", results.insertId);
       res.end()
+            });
+        });
+    });
+
     })
-  })
+  //})
   
 router.get('/user/:id', (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
