@@ -33,7 +33,7 @@ const pool = mysql.createPool({
 function getConnection() {
     return pool
 }
-
+/*
 router.post('/user', (req, res) => {
     console.log("Trying to create a new user...")
     console.log("How do we get the form data???")
@@ -55,7 +55,7 @@ router.post('/user', (req, res) => {
     })
   })
   
-/*router.get('/user/:id', (req, res) => {
+router.get('/user/:id', (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
 
     const connection = getConnection()
