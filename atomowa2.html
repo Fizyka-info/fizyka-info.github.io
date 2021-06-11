@@ -159,7 +159,7 @@
                 <li class = oneline><input type="radio" name="Q5" value=3><label for="bezzmian">pozostanie bez zmian</label></li>
               </li>
             </ul>
-            <button type="submit" class="submit">Odpowiedz</button>
+            <button id = "submit"type="submit" class="submit">Odpowiedz</button>
             </div>
          </form>
     </div>
@@ -167,7 +167,11 @@
         <li class=left-topic><a class= "pagelink" href="atomowa1.html">&lt;&lt;Poprzedni temat</a></li><li class= "right-topic"><a class= "pagelink" href="atomowa3.html">Następny temat&gt;&gt;</a></li>
     </ul><br><br>
 
-    
+    <script>
+    $( "#submit" ).click(function() {
+      alert( "Handler for .click() called." );
+    });
+    </script>
 
     <h3>Bibliografia</h3>
     <a href="https://epodreczniki.pl/a/promieniowanie-termiczne-cial-stalych/D1BZobvVo">https://epodreczniki.pl/a/promieniowanie-termiczne-cial-stalych/D1BZobvVo</a>
